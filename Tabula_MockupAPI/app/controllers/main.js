@@ -16,11 +16,16 @@ function TeacherRender(teacherList){
     let teacherArr = '';
     teacherList.filter((teacher)=>{
         if(teacher.loaiND == 'GV'){
+            if(teacher.hinhAnh == ''){
+              imageTeacher = 'default.jpg'
+            }else{
+              imageTeacher = teacher.hinhAnh;
+            }
             teacherArr += `
             <div class="agents__contentItem text-center col-12 col-sm-6 col-lg-3">
             <div class="contentItem__content">
               <div class="contentItem__img">
-                <img src="./img/${teacher.hinhAnh}" alt="">
+                <img src="./img/${imageTeacher}" alt="">
               </div>
               <div class="contentItem__text">
                 <h4 class="contentItem__info">
