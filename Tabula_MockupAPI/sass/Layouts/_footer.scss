@@ -1,0 +1,97 @@
+.footer{
+    width: 100%;
+    position: relative;
+    background-image: url(../img/footer_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding-bottom: 250px;
+    .footer__main{
+        @include styleText($fs-9,$fw-2,$color-main-3);
+        width: $wid-4;
+        margin: auto;
+        .contentItem__title{
+            @include styleText($fs-6,$fw-4,$color-main-3);
+        }
+        ul{
+            list-style-type: none;
+        }
+        .footer__contentItem{
+            padding: 0 40px;
+            .contact__info{
+                line-height: 2.2em;
+                i{
+                    padding-right: 10px;
+                }
+            }   
+            .contact__icon{
+                i{  
+                    line-height: 2.2em;
+                    padding-right: 10px;
+                    cursor: pointer;
+                    &:hover{
+                        color: $color-main-1;
+                    }
+                }
+            }
+        }
+        .footer__contentItemLink{
+            padding: 0 40px;
+            li{
+                padding: $pd-6 0;
+                border-bottom: 1px solid rgba(0,0,0,.1);
+                a{
+                    @include styleText($fs-9,$fw-2,$color-main-3);
+                    &:hover{
+                        text-decoration: none;
+                        color: rgba(255, 255, 255, 0.596);
+                    }
+                }
+            }
+            .footer__form{
+                input{
+                    margin-top: 45px;
+                    width: 100%;
+                    @include styleInput(transparent,$pd-5,$pd-5,50px,$fs-9,$fw-4,$color-main-3,1px,#ffffff1a);
+                    height: 4em;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    line-height: 1;
+                    transition: border .2s;
+                    &::placeholder{
+                        color: $color-main-3;
+                    }
+                    &:focus-visible{
+                        border: 1px solid rgba(255,255,255,1);
+                        border-radius: 50px;
+                        outline: none;
+                    }
+                }
+                .footer__btn{
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    @include styleButton($color-main-3,$pd-5,$pd-5,1px,50px,$fs-9,$color-main-1,$fw-3,$color-main-3);
+                    height: 4em;
+                    box-shadow: 0 0 0 3em $color-main-3 inset;
+                    transition: box-shadow .3s, background-color .1s, color .3s;
+                    line-height: 2em;
+                    letter-spacing: 1px;
+                    &:hover{
+                        text-decoration: none;
+                        background-color: transparent;
+                        box-shadow: 0 0 0 .08em $color-main-2 inset;
+                        color: $color-main-3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include maxResponsive("mid-large"){
+    .footer{
+        padding-bottom: 150px;
+    }
+}

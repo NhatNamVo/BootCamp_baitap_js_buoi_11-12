@@ -1,0 +1,139 @@
+.Course{
+    width: 100%;
+    margin: auto;
+    position: relative;
+    padding-bottom: 15px;
+    i{
+        @include styleText($fs-1,$fw-1,$color-main-2);
+        display: block;
+    }
+    .Course__main{
+        position: relative;
+        width: $wid-3;
+        margin: auto;
+        padding: 20px 0;
+        z-index: 3;
+        .contentItem__img{
+            img{
+                width: 100%;
+            }
+        }
+        .Course__form{
+            padding: 0 60px;
+        }
+        .contentItem__form{
+            background-color: $color-main-3;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 30px 30px -10px #00000046;
+            padding: 20px 25px; 
+            .form__title{
+                @include styleText($fs-7,$fw-4,$color-main-1);
+            }
+            .form__spacing{
+                height: 50px;
+            }
+            .info__item{
+                position: relative;
+                input{
+                    @include styleInput(transparent,$pd-5,$pd-5,50px,$fs-8,$fw-2,$color-main-1,1px,#0000003b);
+                    padding-left: 3.5em;
+                    width: 100%;
+                    height: 3.7em;
+                    z-index: 2;
+                }
+                i{
+                    position: absolute;
+                    top: .7em;
+                    left: 2.2em;
+                    line-height: 1;
+                }
+            }
+            .form__item{
+                position: relative;
+                padding-bottom: 15px;
+                select{
+                    @include styleInput(transparent,$pd-5,$pd-5,50px,$fs-8,$fw-2,$color-main-1,1px,#0000003b);
+                    -webkit-appearance:none;
+                    width: 100%;
+                    height: 3.7em;
+                    padding-left: 3.5em;
+                    z-index: 2;
+                }
+                textarea{
+                    @include styleInput(transparent,$pd-5,$pd-5,20px,$fs-8,$fw-2,$color-main-1,1px,#0000003b);
+                    -webkit-appearance:none;
+                    height: 90px;
+                    padding-left: 3.5em;
+                    z-index: 2;
+                }
+            }
+            .form__message,.form__language{
+                i{
+                    position: absolute;
+                    top: .7em;
+                    left: 1.2em;
+                    line-height: 1; 
+                }
+            }
+            .Course__Btn{
+                display: block;
+                max-width: 150px;
+                margin-top: 2em;
+                text-align: center;
+                @include styleButton($color-main-2,$pd-2,$pd-3,1px,50px,$fs-12,$color-main-3,$fw-3,$color-main-2);
+                box-shadow: 0 0 0 3em $color-main-2 inset;
+                transition: box-shadow .3s, background-color .5s, color .3s;
+                &:hover{
+                    text-decoration: none;
+                    background-color: transparent;
+                    box-shadow: 0 0 0 .08em $color-main-2 inset;
+                    color: $color-main-2;
+                }
+            }
+            
+        }
+    }
+    .bg4{
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+    }
+}
+
+@include maxResponsive("mid-large"){
+    .Course{
+        .Course__main{
+            width: $wid-2;
+            .Course__form{
+                padding: 0 30px;
+                .info__item{
+                    i{
+                        top: 0.9em;
+                    }
+                }
+                .form__message,.form__language{
+                    i{
+                        top: 0.9em;
+                    }
+                }
+            }
+        }
+    }
+}
+@include maxResponsive("medium"){
+    .Course{
+        .Course__main{
+            .info__item:first-child{
+                padding-bottom: 15px;
+            }
+            .contentItem__form{
+                .Course__Btn{
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
